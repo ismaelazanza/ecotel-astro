@@ -1,0 +1,29 @@
+---
+interface Props {
+	title: string;
+    img: string;
+	href: string;
+}
+
+const { href, title, img } = Astro.props;
+---
+
+<a href={href} target="_blank">
+    <div class="flex items-center">
+        <img src={img} width="40" alt="Icon">
+        <div>
+            <p class="text-[10px] font-bold leading-3">DISPONIBLE EN</p>
+            <p class="text-xl leading-5">{title}</p>
+        </div>
+    </div>
+</a>
+
+
+<style>
+    a{
+        display: inline-block;
+        background-color: azure;
+        padding: 8px 20px 8px 20px;
+        border-radius: 10px;
+    }
+</style>
