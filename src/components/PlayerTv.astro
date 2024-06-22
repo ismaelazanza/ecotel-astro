@@ -8,8 +8,7 @@ import ScriptPlayer from "./ScriptPlayer.astro";
     <head>
         <title>servistream.net</title>
         <!-- load flowplayer css -->
-        <!-- <link rel="stylesheet" href="https://releases.flowplayer.org/7.2.7/skin/skin.css" />-->
-        <link rel="stylesheet" href="//cdn.flowplayer.com/releases/native/3/stable/style/flowplayer.css" />
+        <link rel="stylesheet" href="https://releases.flowplayer.org/7.2.7/skin/skin.css" />
 
         <!-- load jquery -->
     </head>
@@ -28,31 +27,40 @@ import ScriptPlayer from "./ScriptPlayer.astro";
 
             gtag("config", "UA-105379928-1");
         </script>
-        <div id="player" class="flowplayer fp-fat fp-mute is-noise">
+        <div id="video-container" class="flowplayer fp-fat fp-mute is-noise">
         </div>
-    </body>
-</html>
 
-
-<script is:inline>
-    window.player = flowplayer("#player", {
-        key: "$592552535714410",
+        <script type="text/javascript">
+            $("#video-container");
+            flowplayer.conf.streamshow = {
+                offline: "Este canal no esta transmitiendo",
+            };
+            var player = flowplayer("#video-container", {
+                key: "$592552535714410",
                 live: 1,
-                title  : "servistream.net",
                 embed: false,
                 tooltip: false,
                 share: false,
                 autoplay: false,
                 ratio: 9 / 16,
-                volume: 0.7,
-                poster : "https://s.france24.com/media/display/523b6a44-f59c-11ee-968f-005056a97e36/w:1024/p:16x9/live_nologo_es_1920x1080.jpg",
-                src: "https://ecoteltv.streamseguro.com:5443/LiveApp/streams/streaming.m3u8",
+                volume: 0.8,
+                poster: "",
                 fullscreen: true,
                 native_fullscreen: true,
                 customPlaylist: true,
                 swfHls: "flowplayerhls.swf",
-})
-</script>
+                clip: {
+                    sources: [
+                        {
+                            type: "application/x-mpegurl",
+                            src: "https://ecoteltv.streamseguro.com:5443/LiveApp/streams/streaming.m3u8",
+                        },
+                    ],
+                },
+            });
+        </script>
+    </body>
+</html>
 
 <style>
     .flowplayer {
