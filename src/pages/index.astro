@@ -1,113 +1,131 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Menu from '../components/Menu.astro';
-import InformacionHeader  from '../components/InformacionHeader.astro'
-import ButonUno from '../components/ButonUno.astro'
-import ButonApp from '../components/ButonApp.astro';
-import Banner from '../components/Banner.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Menu from "../components/Menu.astro";
+import InformacionHeader from "../components/InformacionHeader.astro";
+import ButonUno from "../components/ButonUno.astro";
+import ButonApp from "../components/ButonApp.astro";
+import Banner from "../components/Banner.astro";
+import PlayerTv from "../components/PlayerTv.astro";
 ---
 
 <Layout title="Cadena Ecotel">
 	<main>
-
-		<!-- CODIGO DEL INICIO DE LA WEB --> 
+		<!-- CODIGO DEL INICIO DE LA WEB -->
 
 		<header class="backgroud__header">
 			<div class="container mx-auto">
-
-				<Menu/>
+				<Menu />
 
 				<div class="py-10">
-	
-					<InformacionHeader/>
-	
-					<div class="flex justify-center py-10">
-						<ButonUno title='Ecotel PRESS' href='https://drive.google.com/drive/folders/1awl6yMhs4Bgi6SIRlZ7T1RSjX6XJoU-X?usp=sharing'/>
-						<ButonUno title='Periodismo Ciudadano' href='https://walink.co/dfaca7'/>
-					</div>
-	
-				</div>
+					<InformacionHeader />
 
+					<div class="flex justify-center py-10">
+						<ButonUno
+							title="Ecotel PRESS"
+							href="https://drive.google.com/drive/folders/1awl6yMhs4Bgi6SIRlZ7T1RSjX6XJoU-X?usp=sharing"
+						/>
+						<ButonUno
+							title="Periodismo Ciudadano"
+							href="https://walink.co/dfaca7"
+						/>
+					</div>
+				</div>
 			</div>
 		</header>
 
-		<!-- CODIGO DEL PLAYER DE TV --> 
+		<!-- CODIGO DEL PLAYER DE TV -->
 
 		<section class="bg-[#13151a] py-24">
 			<div class="container mx-auto pb-8">
-				<h2 class="text-white text-center font-bold text-xl">Miranos en Vivo</h2>
-				<p class="text-white text-center">Nuestra señal HD en alta calidad</p>
+				<h2 class="text-white text-center font-bold text-xl">
+					Miranos en Vivo
+				</h2>
+				<p class="text-white text-center">
+					Nuestra señal HD en alta calidad
+				</p>
 			</div>
 			<div class="grid grid-cols-12">
 				<div></div>
-				<div class="col-[1/-1] md:col-[4/10]">
-					<iframe class="iframe__tv" width="100%" height="570" src="https://playerhd.eu/tv/ecoteltv/" frameborder="0" allowfullscreen></iframe>
-					<div>
-						
-					</div>
+				<div class="col-[1/-1] md:col-[3/11]">
+					<PlayerTv />
 				</div>
 				<div></div>
 			</div>
-			<div class="flex items-center justify-center mt-12 ">
+			<div class="flex items-center justify-center mt-12">
 				<div class="mr-2">
-					<ButonApp img='/img/icons8-google-play-150.png' title='Google Play' href='https://play.google.com/store/apps/details?id=com.ecotel.appMovil&hl=es_EC&gl=US'/>
+					<ButonApp
+						img="/img/icons8-google-play-150.png"
+						title="Google Play"
+						href="https://play.google.com/store/apps/details?id=com.ecotel.appMovil&hl=es_EC&gl=US"
+					/>
 				</div>
 				<div class="ml-2">
-					<ButonApp img='/img/icons8-app-store-de-apple-150.png' title='App Store' href='https://apps.apple.com/cl/app/cadena-ecotel/id1582088891'/>
+					<ButonApp
+						img="/img/icons8-app-store-de-apple-150.png"
+						title="App Store"
+						href="https://apps.apple.com/cl/app/cadena-ecotel/id1582088891"
+					/>
 				</div>
 			</div>
 		</section>
 
-
-		<!-- CODIGO DEL PLAYER DE RADIO --> 
-
+		<!-- CODIGO DEL PLAYER DE RADIO -->
 
 		<section class="py-24 backgroud__player__radio">
 			<div>
 				<div class="container mx-auto pb-8">
-					<h2 class="text-white text-center font-bold text-xl">Ecotel Radio en Vivo</h2>
-					<p class="text-white text-center">Calidad en HD de nuestra radio</p>
+					<h2 class="text-white text-center font-bold text-xl">
+						Ecotel Radio en Vivo
+					</h2>
+					<p class="text-white text-center">
+						Calidad en HD de nuestra radio
+					</p>
 				</div>
 				<div class="grid grid-cols-12">
 					<div></div>
 					<div class="col-[1/-1] md:col-[4/10]">
-						<iframe width="100%" height="100" src="https://player.streamseguro.com/radio/ecotelradio/" frameborder="0" allowfullscreen></iframe>
+						<iframe
+							width="100%"
+							height="100"
+							src="https://player.streamseguro.com/radio/ecotelradio/"
+							frameborder="0"
+							allowfullscreen></iframe>
 					</div>
 					<div></div>
 				</div>
 			</div>
 		</section>
 
-
 		<footer class="py-20">
-
-			<div class="container mx-auto flex flex-col justify-center items-center px-5">
-				<p class="text-[#7e878f] text-center">18 de Noviembre 13-15 y Lourdes Ecotel Tv - Loja.</p>
+			<div
+				class="container mx-auto flex flex-col justify-center items-center px-5"
+			>
+				<p class="text-[#7e878f] text-center">
+					18 de Noviembre 13-15 y Lourdes Ecotel Tv - Loja.
+				</p>
 				<p class="text-[#7e878f] text-center">ecotel@ecotel.tv</p>
-				<p class="text-[#7e878f] text-center">© 2024 Ecotel Tv - Para el Mundo | Derechos Reservados | Realizado por servistream.net </p>
+				<p class="text-[#7e878f] text-center">
+					© 2024 Ecotel Tv - Para el Mundo | Derechos Reservados |
+					Realizado por servistream.net
+				</p>
 			</div>
-
 		</footer>
-
 	</main>
-
 </Layout>
 
 <style>
-
-	.backgroud__header{
+	.backgroud__header {
 		background-image: url(../img/rm373batch2-04.webp);
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
 	}
 
-	.backgroud__player__radio{
+	.backgroud__player__radio {
 		background-color: #0d0f12;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: top;
 	}
-
 </style>

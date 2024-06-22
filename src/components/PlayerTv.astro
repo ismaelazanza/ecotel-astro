@@ -1,0 +1,114 @@
+---
+import ScriptPlayer from "./ScriptPlayer.astro";
+---
+
+<ScriptPlayer />
+
+<html>
+    <head>
+        <title>servistream.net</title>
+        <!-- load flowplayer css -->
+        <!-- <link rel="stylesheet" href="https://releases.flowplayer.org/7.2.7/skin/skin.css" />-->
+        <link rel="stylesheet" href="//cdn.flowplayer.com/releases/native/3/stable/style/flowplayer.css" />
+
+        <!-- load jquery -->
+    </head>
+
+    <body>
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-105379928-1"
+        ></script>
+        <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "UA-105379928-1");
+        </script>
+        <div id="player" class="flowplayer fp-fat fp-mute is-noise">
+        </div>
+    </body>
+</html>
+
+
+<script is:inline>
+    window.player = flowplayer("#player", {
+        key: "$592552535714410",
+                live: 1,
+                title  : "servistream.net",
+                embed: false,
+                tooltip: false,
+                share: false,
+                autoplay: false,
+                ratio: 9 / 16,
+                volume: 0.7,
+                poster : "https://s.france24.com/media/display/523b6a44-f59c-11ee-968f-005056a97e36/w:1024/p:16x9/live_nologo_es_1920x1080.jpg",
+                src: "https://ecoteltv.streamseguro.com:5443/LiveApp/streams/streaming.m3u8",
+                fullscreen: true,
+                native_fullscreen: true,
+                customPlaylist: true,
+                swfHls: "flowplayerhls.swf",
+})
+</script>
+
+<style>
+    .flowplayer {
+        background-color: #444;
+        margin: 0;
+    }
+    .flowplayer.is-error.is-offline .fp-ui {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+        align-content: stretch;
+        -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+    }
+    .flowplayer.is-error.is-offline .fp-message {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+        align-self: auto;
+        font-size: 14px;
+        display: block;
+        padding-top: 0;
+        padding-bottom: 5%;
+        background: 0 0;
+        text-align: center;
+    }
+    .flowplayer.is-error.is-offline.is-noise .noise {
+        width: 100%;
+        height: 100%;
+        background: #777;
+        display: none;
+        position: absolute;
+    }
+    .flowplayer.is-error.is-offline.is-colorbars {
+        background: no-repeat #000;
+        background-image: url(../../embed/images/colorbars.png) !important;
+        background-size: 100% 100% !important;
+    }
+    .flowplayer.is-fullscreen-controls .fp-fullscreen {
+        display: inline-block;
+    }
+</style>
